@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="id">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dashboard Promo Ghanesa</title><link rel="stylesheet" href="/dashboard/dashboard.css"><script src="/dashboard/dashboard.js" type="module"></script></head>
+<body>
+  <header><div class="wrap header-inner"><a class="brand" href="/dashboard"><img src="/logoganesa.png" alt=""><span>GHANESA<small>Dashboard Promo Lokal</small></span></a><a class="website-link" href="/" target="_blank" rel="noopener">Buka Website Lokal ↗</a></div></header>
+  <main class="wrap">
+    <div class="intro"><span class="eyebrow">Kelola promo bulanan</span><h1>Isi datanya, teksnya otomatis.</h1><p>Cukup atur tanggal dan data utama dua paket. Seluruh teks promo mengikuti pilihanmu.</p><p class="workflow">Simpan &amp; Generate <span>→</span> Git commit &amp; push <span>→</span> Cloudflare Pages</p></div>
+    <p id="status" role="status" aria-live="polite">Memuat data promo…</p>
+    <form id="promo-form" hidden>
+      <section class="panel" aria-labelledby="settings-title"><div class="panel-heading"><div><span class="step">01</span><h2 id="settings-title">Pengaturan Promo</h2></div><label class="toggle"><input id="active" type="checkbox" name="active">Promo aktif</label></div>
+        <p id="active-help" class="help">Status promo akan diperbarui setelah generate dan deployment.</p>
+        <div class="fields">
+          <label>Tanggal mulai<input name="startDate" type="date" required></label>
+          <label>Tanggal akhir<input name="endDate" type="date" required aria-describedby="date-error"></label>
+          <p id="date-error" class="field-error full" hidden></p>
+          <label class="toggle"><input name="quotaLimited" type="checkbox">Kuota promo terbatas</label>
+          <div class="auto-period"><span>Periode otomatis</span><output id="auto-period"></output></div>
+        </div>
+        <details class="auto-copy"><summary>Teks section dibentuk otomatis</summary><dl><dt>Judul</dt><dd id="auto-title"></dd><dt>Pengantar</dt><dd id="auto-intro"></dd></dl></details>
+      </section>
+      <div id="packages"></div>
+      <div class="save-bar"><div><strong id="dirty-state">Semua perubahan tersimpan</strong><small>Generate memperbarui file lokal. Website live berubah setelah push dan deployment berhasil.</small></div><button id="save" type="submit">Simpan &amp; Generate</button></div>
+    </form>
+    <noscript>Aktifkan JavaScript untuk menggunakan formulir dashboard lokal.</noscript>
+  </main>
+</body></html>

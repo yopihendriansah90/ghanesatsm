@@ -44,34 +44,9 @@ const setIcons = (selector, names) => document.querySelectorAll(selector).forEac
   element.textContent = '';
   element.append(materialIcon(names[index % names.length]));
 });
-const packageCards = [...document.querySelectorAll('.promo-card')];
-const packageFeatures = [
-  [
-    { text: 'Pilihan manual atau matic', icon: 'check_circle' },
-    { text: 'Jadwal latihan fleksibel', icon: 'check_circle' },
-    { text: 'Instruktur profesional dan sabar', icon: 'check_circle' },
-    { text: 'Konsultasi kebutuhan belajar', icon: 'check_circle' },
-    { text: 'Sudah termasuk biaya pendaftaran', icon: 'check_circle' },
-    { text: 'Tidak termasuk pembuatan SIM A', icon: 'close' }
-  ],
-  [
-    { text: 'Pilihan manual atau matic', icon: 'check_circle' },
-    { text: 'Jadwal latihan fleksibel', icon: 'check_circle' },
-    { text: 'Instruktur profesional dan sabar', icon: 'check_circle' },
-    { text: 'Konsultasi kebutuhan belajar', icon: 'check_circle' },
-    { text: 'Sudah termasuk biaya pendaftaran', icon: 'check_circle' },
-    { text: 'Termasuk pembuatan SIM A', icon: 'check_circle' }
-  ]
-];
-packageCards.forEach((card, index) => {
-  const title = card.querySelector('h3');
-  const list = card.querySelector('.check-list');
-  if (index === 1 && title) title.textContent = '10 Jam Kursus Mengemudi + Pembuatan SIM A';
-  if (list && packageFeatures[index]) list.innerHTML = packageFeatures[index].map((feature) => `<li data-icon="${feature.icon}">${feature.text}</li>`).join('');
-});
 setIcons('.info-icon', ['directions_car', 'location_on', 'chat']);
 setIcons('.program-icon', ['directions_car', 'directions_car']);
-setIcons('.feature-icon', ['directions_car', 'trending_up', 'verified_user']);
+setIcons('.feature-card:not(.facility-card) .feature-icon', ['directions_car', 'trending_up', 'verified_user']);
 setIcons('.contact-icon', ['location_on', 'chat']);
 setIcons('.step-card > span', ['chat', 'support_agent', 'event_available', 'directions_car']);
 document.querySelectorAll('.check-list li').forEach((item) => {
@@ -246,11 +221,104 @@ window.addEventListener('resize', () => {
 });
 moveAlumni(0);
 
+const testimonialTrack = document.querySelector('#testimonial-track');
+if (testimonialTrack) {
+  const cards = [...testimonialTrack.querySelectorAll('.testimonial-card')];
+  const section = document.querySelector('#testimoni');
+  const play = section.querySelector('[data-testimonial-play]');
+  const dotWrap = section.querySelector('.testimonial-dots');
+  const previous = section.querySelector('[data-testimonial-prev]');
+  const next = section.querySelector('[data-testimonial-next]');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let paused = reducedMotion.matches;
+  let hovered = false;
+  let dragging = false;
+  let visible = false;
+  let timer;
+  let dragX = 0;
+  let dragScroll = 0;
+  const step = () => cards[0].getBoundingClientRect().width + (parseFloat(getComputedStyle(testimonialTrack).gap) || 0);
+  const maxIndex = () => Math.max(0, Math.round((testimonialTrack.scrollWidth - testimonialTrack.clientWidth) / step()));
+  const currentIndex = () => Math.min(maxIndex(), Math.round(testimonialTrack.scrollLeft / step()));
+  const move = (index) => testimonialTrack.scrollTo({ left: Math.max(0, Math.min(index, maxIndex())) * step(), behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+  const updateDots = () => {
+    [...dotWrap.children].forEach((dot, index) => dot.setAttribute('aria-current', String(index === currentIndex())));
+    previous.disabled = currentIndex() === 0;
+    next.disabled = currentIndex() === maxIndex();
+  };
+  const buildDots = () => {
+    dotWrap.replaceChildren();
+    for (let index = 0; index <= maxIndex(); index++) {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.setAttribute('aria-label', 'Tampilkan testimoni mulai kartu ' + (index + 1));
+      dot.setAttribute('aria-controls', 'testimonial-track');
+      dot.addEventListener('click', () => { move(index); sync(); });
+      dotWrap.append(dot);
+    }
+    updateDots();
+  };
+  const sync = () => {
+    clearInterval(timer);
+    play.textContent = paused ? 'Putar otomatis' : 'Jeda otomatis';
+    play.setAttribute('aria-pressed', String(paused));
+    if (!paused && visible && !hovered && !dragging && !document.hidden && !section.contains(document.activeElement)) {
+      timer = setInterval(() => move(currentIndex() >= maxIndex() ? 0 : currentIndex() + 1), 6000);
+    }
+  };
+  section.querySelector('[data-testimonial-prev]').addEventListener('click', () => { move(currentIndex() <= 0 ? maxIndex() : currentIndex() - 1); sync(); });
+  section.querySelector('[data-testimonial-next]').addEventListener('click', () => { move(currentIndex() >= maxIndex() ? 0 : currentIndex() + 1); sync(); });
+  play.addEventListener('click', () => { paused = !paused; sync(); });
+  testimonialTrack.addEventListener('scroll', updateDots, { passive: true });
+  testimonialTrack.addEventListener('keydown', (event) => {
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    event.preventDefault();
+    move(currentIndex() + (event.key === 'ArrowRight' ? 1 : -1));
+  });
+  testimonialTrack.addEventListener('pointerdown', (event) => {
+    if (event.pointerType !== 'mouse' || event.button !== 0) return;
+    dragging = true;
+    dragX = event.clientX;
+    dragScroll = testimonialTrack.scrollLeft;
+    testimonialTrack.setPointerCapture(event.pointerId);
+    testimonialTrack.classList.add('is-dragging');
+    sync();
+  });
+  testimonialTrack.addEventListener('pointermove', (event) => {
+    if (dragging) testimonialTrack.scrollLeft = dragScroll + dragX - event.clientX;
+  });
+  const endDrag = () => {
+    if (!dragging) return;
+    dragging = false;
+    testimonialTrack.classList.remove('is-dragging');
+    move(currentIndex());
+    sync();
+  };
+  testimonialTrack.addEventListener('pointerup', endDrag);
+  testimonialTrack.addEventListener('pointercancel', endDrag);
+  section.addEventListener('pointerenter', (event) => { if (event.pointerType === 'mouse') { hovered = true; sync(); } });
+  section.addEventListener('pointerleave', () => { hovered = false; sync(); });
+  testimonialTrack.addEventListener('touchstart', () => { clearInterval(timer); }, { passive: true });
+  testimonialTrack.addEventListener('touchend', sync, { passive: true });
+  testimonialTrack.addEventListener('touchcancel', sync, { passive: true });
+  section.addEventListener('focusin', sync);
+  section.addEventListener('focusout', () => setTimeout(sync, 0));
+  document.addEventListener('visibilitychange', sync);
+  reducedMotion.addEventListener('change', () => { paused = reducedMotion.matches; sync(); });
+  window.addEventListener('resize', () => { move(currentIndex()); buildDots(); sync(); });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; sync(); }, { threshold: .2 }).observe(testimonialTrack);
+  } else visible = true;
+  buildDots();
+  sync();
+}
+
 const revealTargets = [
   ['.hero .max-w-xl', 'reveal reveal-left'],
   ['.hero .shadow-soft', 'reveal reveal-right'],
   ['.section-heading', 'reveal'],
   ['.program-card', 'reveal reveal-up stagger-item'],
+  ['.regular-card', 'reveal reveal-up stagger-item'],
   ['.feature-card', 'reveal reveal-up stagger-item'],
   ['.step-card', 'reveal reveal-up stagger-item'],
   ['.faq-item', 'reveal reveal-up stagger-item'],

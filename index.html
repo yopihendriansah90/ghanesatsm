@@ -28,7 +28,7 @@
             colors: {
               navy: "#082d6b",
               blue: "#1478e8",
-              sky: "#e9f7ff",
+              sky: "#f0f8ff",
               yellow: "#ffd21e",
             },
             boxShadow: { soft: "0 15px 40px rgba(8, 45, 107, .10)" },
@@ -57,7 +57,7 @@
             class="h-12 w-12 object-contain"
           />
           <span class="hidden leading-tight text-navy sm:block"
-            ><b class="block text-[10px] tracking-wide">KURSUS MENGEMUDI</b
+            ><b class="block text-[10px] tracking-wide">PUSAT KURSUS MENGEMUDI</b
             ><strong class="block text-xl font-extrabold tracking-tight"
               >GHANESA</strong
             ></span
@@ -69,9 +69,12 @@
           aria-label="Navigasi utama"
         >
           <a class="nav-link active" href="#beranda">Beranda</a
-          ><a class="nav-link" href="#program">Program &amp; Paket</a
+          ><a class="nav-link" href="#paket-reguler">Paket</a
+          ><a class="nav-link" href="#program">Promo</a
           ><a class="nav-link" href="#keunggulan">Keunggulan</a
+
           ><a class="nav-link" href="#alumni">Alumni</a
+          ><a class="nav-link" href="#testimoni">Testimoni</a
           ><a class="nav-link" href="#faq">FAQ</a
           ><a class="nav-link" href="#lokasi">Lokasi</a>
         </nav>
@@ -98,8 +101,10 @@
           class="mx-auto flex max-w-7xl flex-col gap-4 text-sm font-semibold"
         >
           <a href="#beranda">Beranda</a
-          ><a href="#program">Program &amp; Paket</a
+          ><a href="#paket-reguler">Paket</a
+          ><a href="#program">Promo</a
           ><a href="#keunggulan">Keunggulan</a><a href="#alumni">Alumni</a
+          ><a href="#testimoni">Testimoni</a
           ><a href="#faq">FAQ</a><a href="#lokasi">Lokasi</a
           ><a
             href="https://wa.me/6282116193939"
@@ -118,17 +123,14 @@
         <div
           class="relative mx-auto grid min-h-[575px] max-w-7xl items-center px-5 py-16 lg:grid-cols-2 lg:px-8 lg:py-20"
         >
-          <div class="max-w-xl">
-            <p class="eyebrow">Kursus Mengemudi · Tasikmalaya</p>
-            <div class="promo-pill">
-              <span>🔥</span> PROMO SPESIAL OKTOBER · BERLAKU SAMPAI 31 OKTOBER
-              2026
-            </div>
+          <div class="hero-copy max-w-xl">
+            <!-- <p class="eyebrow">Pusat Kursus Mengemudi · Tasikmalaya</p> -->
+
             <h1
-              class="mt-4 text-4xl font-extrabold leading-[1.12] text-navy sm:text-5xl lg:text-[54px]"
+              class="hero-title mt-4 font-extrabold leading-[1.5] text-navy"
             >
-              Belajar Mengemudi,<br /><span class="text-blue"
-                >Mulai Lebih Percaya Diri.</span
+              <span class="hero-title-line">Pusat Kursus Mengemudi</span><span class="text-blue"
+                >Garansi Sampai Bisa</span
               >
             </h1>
             <p
@@ -138,15 +140,9 @@
               Konsultasikan kebutuhan belajarmu dengan tim kami.
             </p>
             <div class="mt-7 flex flex-col gap-3 sm:flex-row">
-              <a
-                href="https://wa.me/6282116193939?text=Halo%20Ghanesa%2C%20saya%20ingin%20konsultasi%20promo%20Oktober."
-                class="inline-flex items-center justify-center gap-2 rounded-full bg-yellow px-6 py-3.5 text-sm font-extrabold text-navy shadow-lg shadow-yellow/30 transition hover:-translate-y-0.5"
-                >◉&nbsp; Konsultasi Promo via WhatsApp <span>→</span></a
-              ><a
-                href="#program"
-                class="inline-flex items-center justify-center rounded-full border-2 border-blue px-6 py-3 text-sm font-bold text-navy transition hover:bg-blue hover:text-white"
-                >Lihat Paket Promo</a
-              >
+              <!-- PROMO:HERO:START -->
+<a href="https://wa.me/6282116193939?text=Halo%20Ghanesa%2C%20saya%20ingin%20konsultasi%20promo%20Oktober%202026." class="inline-flex items-center justify-center gap-2 rounded-full bg-yellow px-6 py-3.5 text-sm font-extrabold text-navy shadow-lg shadow-yellow/30 transition hover:-translate-y-0.5">Konsultasi Promo via WhatsApp <span aria-hidden="true">→</span></a>
+<!-- PROMO:HERO:END -->
             </div>
           </div>
         </div>
@@ -179,105 +175,90 @@
         </div>
       </section>
 
-      <section id="program" class="section-pad bg-white">
+      <section id="paket-reguler" class="section-pad regular-section" aria-labelledby="regular-heading">
         <div class="section-wrap">
           <div class="section-heading">
-            <p class="eyebrow">Promo Spesial Oktober</p>
-            <h2>Pilih Paket yang Cocok untukmu</h2>
-            <p>
-              Belajar manual atau matic dengan jadwal fleksibel dan instruktur
-              yang sabar.
-            </p>
-            <p class="promo-deadline">
-              Berlaku sampai 31 Oktober 2026 · Kuota promo terbatas
-            </p>
+            <p class="eyebrow">Program &amp; Paket</p>
+            <h2 id="regular-heading">Informasi Paket Reguler</h2>
+            <p>Pilih kelas dan jumlah pertemuan yang sesuai dengan kebutuhan belajarmu.</p>
           </div>
-          <div class="mt-9 grid gap-5 lg:grid-cols-2">
-            <article class="program-card promo-card">
-              <span class="promo-label">CRAZY DEAL</span>
-              <div class="program-copy">
-                <span class="program-icon">◉</span>
-                <div>
-                  <h3>8 Jam Kursus Mengemudi</h3>
-                  <p>
-                    Paket hemat untuk kamu yang ingin mulai belajar dengan
-                    nyaman dan percaya diri.
-                  </p>
-                </div>
+          <div class="regular-summary">
+            <p class="regular-registration"><strong>Biaya pendaftaran Rp100.000</strong><span>Terpisah dari biaya kursus yang tercantum di bawah.</span></p>
+            <p class="regular-transmission"><strong>Manual &amp; matic, biaya sama</strong><span>Boleh mencampur latihan kedua transmisi.</span></p>
+          </div>
+          <div class="regular-grid">
+            <article class="regular-card regular-card-priority" aria-describedby="priority-benefits-heading">
+              <div class="regular-priority-summary">
+              <p class="regular-class-label">Pilihan dengan garansi</p>
+              <h3>Kelas Prioritas</h3>
+              <p class="regular-price">Rp2.500.000</p>
+              <p class="regular-meetings">15 kali pertemuan</p>
               </div>
-              <div class="transmission-badges">
-                <span>Manual</span><span>Matic</span>
+              <div class="regular-priority-benefits">
+                <h4 id="priority-benefits-heading">Keunggulan Kelas Prioritas</h4>
+                <ul class="regular-benefits">
+                  <li>Bebas pilih jadwal</li>
+                  <li>Gratis pengulangan jika belum bisa</li>
+                  <li>Garansi sampai bisa</li>
+                </ul>
               </div>
-              <div class="price">Rp1.150.000</div>
-              <ul class="check-list">
-                <li>✓ Jadwal latihan fleksibel</li>
-                <li>✓ Instruktur profesional dan sabar</li>
-                <li>✓ Sudah termasuk biaya pendaftaran</li>
-              </ul>
-              <a
-                href="https://wa.me/6282116193939?text=Halo%20Ghanesa%2C%20saya%20tertarik%20paket%20Crazy%20Deal%208%20jam%20Rp1.150.000."
-                class="program-button"
-                >◉&nbsp; Ambil Paket Crazy Deal <span>→</span></a
-              ><small class="program-note"
-                >Admin siap membantu memilih jadwal yang sesuai.</small
-              >
+              <a class="regular-button" href="https://wa.me/6282116193939?text=Halo%20Ghanesa%2C%20saya%20ingin%20konsultasi%20Kelas%20Prioritas%20Paket%20Reguler%2C%20biaya%20kursus%20Rp2.500.000%20untuk%2015%20kali%20pertemuan.">Konsultasi Kelas Prioritas</a>
             </article>
-            <article class="program-card matic promo-card featured">
-              <span class="promo-label">PALING DIREKOMENDASIKAN</span>
-              <div class="program-copy">
-                <span class="program-icon"></span>
-                <div>
-                  <h3>10 Jam Kursus Mengemudi<span>+ Pembuatan SIM A</span></h3>
-                  <p>
-                    Pilihan lengkap untuk kamu yang ingin belajar mengemudi
-                    sekaligus mendapatkan SIM A.
-                  </p>
-                </div>
-              </div>
-              <div class="transmission-badges">
-                <span>Manual</span><span>Matic</span>
-              </div>
-              <div class="price">Rp2.200.000</div>
-              <ul class="check-list">
-                <li>✓ Jadwal latihan fleksibel</li>
-                <li>✓ Instruktur profesional dan sabar</li>
-                <li>✓ Termasuk pembuatan SIM A</li>
-                <li>✓ Sudah termasuk biaya pendaftaran</li>
-              </ul>
-              <a
-                href="https://wa.me/6282116193939?text=Halo%20Ghanesa%2C%20saya%20tertarik%20paket%20OK%20Deal%2010%20jam%20dan%20pembuatan%20SIM%20A%20Rp2.200.000."
-                class="program-button"
-                >◉&nbsp; Ambil Paket OK Deal <span>→</span></a
-              ><small class="program-note"
-                >Admin siap membantu memilih jadwal yang sesuai.</small
-              >
+            <article class="regular-card">
+              <p class="regular-class-label">Paket Reguler</p>
+              <h3>Kelas Eksekutif</h3>
+              <p class="regular-price">Rp1.750.000</p>
+              <p class="regular-meetings">10 kali pertemuan</p>
+              <a class="regular-button" href="https://wa.me/6282116193939?text=Halo%20Ghanesa%2C%20saya%20ingin%20konsultasi%20Kelas%20Eksekutif%20Paket%20Reguler%2C%20biaya%20kursus%20Rp1.750.000%20untuk%2010%20kali%20pertemuan.">Konsultasi Kelas Eksekutif</a>
+            </article>
+            <article class="regular-card">
+              <p class="regular-class-label">Paket Reguler</p>
+              <h3>Kelas Prima</h3>
+              <p class="regular-price">Rp1.100.000</p>
+              <p class="regular-meetings">6 kali pertemuan</p>
+              <a class="regular-button" href="https://wa.me/6282116193939?text=Halo%20Ghanesa%2C%20saya%20ingin%20konsultasi%20Kelas%20Prima%20Paket%20Reguler%2C%20biaya%20kursus%20Rp1.100.000%20untuk%206%20kali%20pertemuan.">Konsultasi Kelas Prima</a>
+            </article>
+            <article class="regular-card">
+              <p class="regular-class-label">Paket Reguler</p>
+              <h3>Kelas Mandiri</h3>
+              <p class="regular-price">Rp850.000</p>
+              <p class="regular-meetings">6 kali pertemuan</p>
+              <a class="regular-button" href="https://wa.me/6282116193939?text=Halo%20Ghanesa%2C%20saya%20ingin%20konsultasi%20Kelas%20Mandiri%20Paket%20Reguler%2C%20biaya%20kursus%20Rp850.000%20untuk%206%20kali%20pertemuan.">Konsultasi Kelas Mandiri</a>
             </article>
           </div>
-          <div class="trust-grid">
-            <div>
-              <span>✓</span>
-              <p>
-                <b>Manual &amp; Matic</b><small>Pilih sesuai kebutuhanmu</small>
-              </p>
-            </div>
-            <div>
-              <span>✓</span>
-              <p><b>Jadwal Fleksibel</b><small>Atur waktu latihanmu</small></p>
-            </div>
-            <div>
-              <span>✓</span>
-              <p>
-                <b>Instruktur Profesional</b
-                ><small>Ramah, sabar, dan berpengalaman</small>
-              </p>
-            </div>
+          <div class="regular-info" aria-labelledby="regular-info-heading">
+            <h3 id="regular-info-heading">Jadwal &amp; pilihan tambahan</h3>
+            <dl class="regular-info-grid">
+              <div><dt>Jadwal reguler</dt><dd><strong>Senin–Sabtu.</strong> Tambahan Rp25.000 untuk latihan pada Minggu dan tanggal merah.</dd></div>
+              <div><dt>Opsional: pembuatan SIM A</dt><dd>Tambahan <strong>Rp750.000</strong>, di luar biaya kursus dan pendaftaran.</dd></div>
+            </dl>
           </div>
-          <p class="promo-note">
-            Promo berlaku untuk semua peserta sampai 31 Oktober 2026 atau selama
-            kuota tersedia.
-          </p>
         </div>
       </section>
+
+      <!-- PROMO:SECTION:START -->
+<section id="program" class="section-pad bg-white"><div class="section-wrap">
+    <div class="section-heading"><p class="eyebrow">Promo Spesial Oktober 2026</p><h2>Pilihan Promo Kursus Mengemudi</h2><p>Pilih promo kursus manual atau matic dengan durasi dan biaya sesuai kebutuhanmu.</p><p class="promo-deadline">Berlaku 1 Oktober 2026 – 31 Oktober 2026 · Kuota promo terbatas.</p></div>
+    <div class="mt-9 grid gap-5 lg:grid-cols-2"><article data-managed-promo class="program-card promo-card">
+    <span class="promo-label">CRAZY DEAL</span>
+    <div class="program-copy"><span class="program-icon" aria-hidden="true"></span><div><h3>8 Jam Kursus Mengemudi</h3><p>Belajar mengemudi manual atau matic dengan 8 jam latihan. Sudah termasuk biaya pendaftaran. Tidak termasuk pembuatan SIM A.</p></div></div>
+    <div class="transmission-badges"><span>Manual</span><span>Matic</span></div>
+    <div class="price">Rp1.150.000</div><p class="promo-duration">8 jam</p>
+    <ul class="check-list"><li data-icon="check_circle">Jadwal latihan fleksibel</li><li data-icon="check_circle">Instruktur profesional dan sabar</li><li data-icon="check_circle">Konsultasi kebutuhan belajar</li><li data-icon="check_circle">Sudah termasuk biaya pendaftaran</li><li data-icon="close">Tidak termasuk pembuatan SIM A</li></ul>
+    <a href="https://wa.me/6282116193939?text=Halo%20Ghanesa%2C%20saya%20tertarik%20promo%20Crazy%20Deal%20periode%20Oktober%202026%3A%208%20jam%2C%20pilihan%20manual%20atau%20matic%2C%20Rp1.150.000.%20Termasuk%20biaya%20pendaftaran.%20Tidak%20termasuk%20pembuatan%20SIM%20A.%20Berlaku%201%20Oktober%202026%20%E2%80%93%2031%20Oktober%202026." class="program-button">Ambil Paket Crazy Deal <span aria-hidden="true">→</span></a>
+    <small class="program-note">Konsultasikan jadwal dan ketersediaan promo dengan admin.</small>
+  </article>
+<article data-managed-promo class="program-card promo-card featured">
+    <span class="promo-label">PALING DIREKOMENDASIKAN</span>
+    <div class="program-copy"><span class="program-icon" aria-hidden="true"></span><div><h3>10 Jam Kursus Mengemudi + Pembuatan SIM A</h3><p>Belajar mengemudi manual atau matic dengan 10 jam latihan. Sudah termasuk biaya pendaftaran. Termasuk pembuatan SIM A.</p></div></div>
+    <div class="transmission-badges"><span>Manual</span><span>Matic</span></div>
+    <div class="price">Rp2.200.000</div><p class="promo-duration">10 jam</p>
+    <ul class="check-list"><li data-icon="check_circle">Jadwal latihan fleksibel</li><li data-icon="check_circle">Instruktur profesional dan sabar</li><li data-icon="check_circle">Konsultasi kebutuhan belajar</li><li data-icon="check_circle">Sudah termasuk biaya pendaftaran</li><li data-icon="check_circle">Termasuk pembuatan SIM A</li></ul>
+    <a href="https://wa.me/6282116193939?text=Halo%20Ghanesa%2C%20saya%20tertarik%20promo%20OK%20Deal%20periode%20Oktober%202026%3A%2010%20jam%2C%20pilihan%20manual%20atau%20matic%2C%20Rp2.200.000.%20Termasuk%20biaya%20pendaftaran.%20Termasuk%20pembuatan%20SIM%20A.%20Berlaku%201%20Oktober%202026%20%E2%80%93%2031%20Oktober%202026." class="program-button">Ambil Paket OK Deal <span aria-hidden="true">→</span></a>
+    <small class="program-note">Konsultasikan jadwal dan ketersediaan promo dengan admin.</small>
+  </article></div><p class="promo-note">Berlaku 1 Oktober 2026 – 31 Oktober 2026 · Kuota promo terbatas.</p>
+  </div></section>
+<!-- PROMO:SECTION:END -->
 
       <section id="keunggulan" class="section-pad bg-sky">
         <div class="section-wrap">
@@ -318,6 +299,68 @@
                   Dapatkan pengalaman berkendara sebagai situasi untuk
                   meningkatkan rasa percaya diri.
                 </p>
+              </div>
+            </article>
+          </div>
+          <div class="facilities-heading">
+            <p class="eyebrow">Fasilitas Kursus Mengemudi</p>
+            <h3>Kenyamanan di Setiap Pertemuan</h3>
+          </div>
+          <div class="facilities-grid">
+            <article class="feature-card facility-card">
+              <span class="feature-icon" aria-hidden="true"><span class="material-symbols-outlined">directions_car</span></span>
+              <div>
+                <h4>Mobil Bersih &amp; Full AC</h4>
+                <p>Mobil bersih, wangi, dan ber-AC untuk kenyamanan selama latihan.</p>
+              </div>
+            </article>
+            <article class="feature-card facility-card">
+              <span class="feature-icon" aria-hidden="true"><span class="material-symbols-outlined">support_agent</span></span>
+              <div>
+                <h4>Instruktur Profesional &amp; Sabar</h4>
+                <p>Belajar didampingi instruktur profesional dengan pendekatan yang sabar.</p>
+              </div>
+            </article>
+            <article class="feature-card facility-card">
+              <span class="feature-icon" aria-hidden="true"><span class="material-symbols-outlined">schedule</span></span>
+              <div>
+                <h4>Jam Belajar Fleksibel</h4>
+                <p>Pilihan waktu belajar dari pagi sampai malam.</p>
+              </div>
+            </article>
+            <article class="feature-card facility-card">
+              <span class="feature-icon" aria-hidden="true"><span class="material-symbols-outlined">person</span></span>
+              <div>
+                <h4>Belajar Privat</h4>
+                <p>Satu mobil untuk satu peserta selama sesi latihan.</p>
+              </div>
+            </article>
+            <article class="feature-card facility-card">
+              <span class="feature-icon" aria-hidden="true"><span class="material-symbols-outlined">local_drink</span></span>
+              <div>
+                <h4>Minuman Gratis</h4>
+                <p>Gratis softdrink atau air mineral setiap pertemuan.</p>
+              </div>
+            </article>
+            <article class="feature-card facility-card">
+              <span class="feature-icon" aria-hidden="true"><span class="material-symbols-outlined">verified</span></span>
+              <div>
+                <h4>Garansi Pelayanan</h4>
+                <p>Garansi pelayanan staf dan pengajar.</p>
+              </div>
+            </article>
+            <article class="feature-card facility-card">
+              <span class="feature-icon" aria-hidden="true"><span class="material-symbols-outlined">car_repair</span></span>
+              <div>
+                <h4>Bonus Materi &amp; Konsultasi</h4>
+                <p>Materi perawatan dan perbaikan ringan, serta konsultasi berkesinambungan.</p>
+              </div>
+            </article>
+            <article class="feature-card facility-card">
+              <span class="feature-icon" aria-hidden="true"><span class="material-symbols-outlined">verified_user</span></span>
+              <div>
+                <h4>Garansi Belajar Sampai Bisa</h4>
+                <p>Khusus Kelas Prioritas: gratis pengulangan jika belum bisa.</p>
               </div>
             </article>
           </div>
@@ -409,7 +452,103 @@
         </div>
       </section>
 
-      <section class="section-pad bg-sky">
+      <section id="testimoni" class="section-pad testimonial-section" aria-labelledby="testimonial-heading">
+        <div class="section-wrap">
+          <div class="section-heading">
+            <p class="eyebrow">Testimoni Peserta</p>
+            <h2 id="testimonial-heading">Cerita Mereka Setelah Belajar</h2>
+            <p>Pengalaman peserta yang dibagikan melalui ulasan Google Maps.</p>
+          </div>
+          <p class="testimonial-disclosure">8 ulasan pilihan, masing-masing berbintang 5. Teks diringkas dari ulasan asli tanpa mengubah makna.</p>
+          <div id="testimonial-track" class="testimonial-grid" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Testimoni peserta, geser atau gunakan tombol panah">
+            <article class="testimonial-card" aria-label="Ulasan Mandeh Athifa">
+              <div class="testimonial-person">
+                <span class="testimonial-avatar" aria-hidden="true">MA</span>
+                <div><h3>Mandeh Athifa</h3><p>Pengulas di Google Maps</p></div>
+              </div>
+              <p class="testimonial-stars" aria-label="Rating 5 dari 5 bintang"><span aria-hidden="true">★★★★★</span></p>
+              <p class="testimonial-body">Awalnya takut belajar mengemudi, kini sudah bisa menyetir sendiri. Instruktur sabar dan membuat suasana belajar terasa tenang.</p>
+              <p class="testimonial-summary-label">Ringkasan ulasan</p>
+            </article>
+            <article class="testimonial-card" aria-label="Ulasan Sarip Usman">
+              <div class="testimonial-person">
+                <span class="testimonial-avatar" aria-hidden="true">SU</span>
+                <div><h3>Sarip Usman</h3><p>Pengulas di Google Maps</p></div>
+              </div>
+              <p class="testimonial-stars" aria-label="Rating 5 dari 5 bintang"><span aria-hidden="true">★★★★★</span></p>
+              <p class="testimonial-body">Berawal dari belum pernah mengemudi, berani membawa mobil sendiri setelah 10 pertemuan. Mengapresiasi instruktur, mobil yang bersih, dan fasilitas yang nyaman.</p>
+              <p class="testimonial-summary-label">Ringkasan ulasan</p>
+            </article>
+            <article class="testimonial-card" aria-label="Ulasan Outfit By Sya">
+              <div class="testimonial-person">
+                <span class="testimonial-avatar" aria-hidden="true">OS</span>
+                <div><h3>Outfit By Sya</h3><p>Pengulas di Google Maps</p></div>
+              </div>
+              <p class="testimonial-stars" aria-label="Rating 5 dari 5 bintang"><span aria-hidden="true">★★★★★</span></p>
+              <p class="testimonial-body">Arahan jelas dan terstruktur, dengan target belajar setiap pertemuan. Setelah 10 pertemuan merasa lancar di jalan besar, jalan kecil, dan saat parkir.</p>
+              <p class="testimonial-summary-label">Ringkasan ulasan</p>
+            </article>
+            <article class="testimonial-card" aria-label="Ulasan Milda Verga">
+              <div class="testimonial-person">
+                <span class="testimonial-avatar" aria-hidden="true">MV</span>
+                <div><h3>Milda Verga</h3><p>Pengulas di Google Maps</p></div>
+              </div>
+              <p class="testimonial-stars" aria-label="Rating 5 dari 5 bintang"><span aria-hidden="true">★★★★★</span></p>
+              <p class="testimonial-body">Materi diberikan bertahap dengan penjelasan yang mudah dipahami. Instruktur sabar dan ramah membantu meningkatkan kepercayaan diri.</p>
+              <p class="testimonial-summary-label">Ringkasan ulasan</p>
+            </article>
+            <article class="testimonial-card" aria-label="Ulasan Nadia Aritya">
+              <div class="testimonial-person">
+                <span class="testimonial-avatar" aria-hidden="true">NA</span>
+                <div><h3>Nadia Aritya</h3><p>Pengulas di Google Maps</p></div>
+              </div>
+              <p class="testimonial-stars" aria-label="Rating 5 dari 5 bintang"><span aria-hidden="true">★★★★★</span></p>
+              <p class="testimonial-body">Pengajaran sistematis sesuai kurikulum. Ruang tunggu ber-AC, tersedia minuman, serta kendaraan bersih dan nyaman.</p>
+              <p class="testimonial-summary-label">Ringkasan ulasan</p>
+            </article>
+            <article class="testimonial-card" aria-label="Ulasan alinr aladawiyah">
+              <div class="testimonial-person">
+                <span class="testimonial-avatar" aria-hidden="true">AA</span>
+                <div><h3>alinr aladawiyah</h3><p>Pengulas di Google Maps</p></div>
+              </div>
+              <p class="testimonial-stars" aria-label="Rating 5 dari 5 bintang"><span aria-hidden="true">★★★★★</span></p>
+              <p class="testimonial-body">Penjelasan instruktur jelas dan detail, dengan pendampingan yang membantu saat di jalan. Layanan pelanggan komunikatif dalam memberikan konfirmasi.</p>
+              <p class="testimonial-summary-label">Ringkasan ulasan</p>
+            </article>
+            <article class="testimonial-card" aria-label="Ulasan Ryka Fauziah">
+              <div class="testimonial-person">
+                <span class="testimonial-avatar" aria-hidden="true">RF</span>
+                <div><h3>Ryka Fauziah</h3><p>Pengulas di Google Maps</p></div>
+              </div>
+              <p class="testimonial-stars" aria-label="Rating 5 dari 5 bintang"><span aria-hidden="true">★★★★★</span></p>
+              <p class="testimonial-body">Instruktur profesional dan sabar, dengan arahan yang mudah dipahami. Kendaraan dalam kondisi baik dan jadwal latihan fleksibel.</p>
+              <p class="testimonial-summary-label">Ringkasan ulasan</p>
+            </article>
+            <article class="testimonial-card" aria-label="Ulasan Helmi Diana Daily">
+              <div class="testimonial-person">
+                <span class="testimonial-avatar" aria-hidden="true">HD</span>
+                <div><h3>Helmi Diana Daily</h3><p>Pengulas di Google Maps</p></div>
+              </div>
+              <p class="testimonial-stars" aria-label="Rating 5 dari 5 bintang"><span aria-hidden="true">★★★★★</span></p>
+              <p class="testimonial-body">Suasana belajar santai dan tidak membuat panik. Membantu pemula menjadi lebih percaya diri membawa mobil di jalan.</p>
+              <p class="testimonial-summary-label">Ringkasan ulasan</p>
+            </article>
+          </div>
+          <div class="testimonial-controls">
+            <button type="button" data-testimonial-prev aria-label="Testimoni sebelumnya" aria-controls="testimonial-track"><span aria-hidden="true">←</span></button>
+            <div class="testimonial-dots" aria-label="Pilih posisi testimoni"></div>
+            <button type="button" data-testimonial-next aria-label="Testimoni berikutnya" aria-controls="testimonial-track"><span aria-hidden="true">→</span></button>
+            <button type="button" class="testimonial-autoplay-control" data-testimonial-play aria-pressed="false" aria-controls="testimonial-track">Jeda otomatis</button>
+          </div>
+          <p class="testimonial-swipe-hint">Geser kartu untuk membaca pengalaman lainnya.</p>
+          <div class="testimonial-source">
+            <p>Pengalaman dan hasil belajar setiap peserta dapat berbeda.</p>
+            <a href="https://www.google.com/maps/place/Kursus+Mengemudi+Mobil+Ghanesa+Tasikmalaya/data=!4m2!3m1!1s0x2e6f57b9ec973207:0x889663fc3a2c2165" class="testimonial-source-link" target="_blank" rel="noopener noreferrer">Lihat ulasan di Google Maps <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad bg-white">
         <div class="section-wrap">
           <div class="section-heading">
             <p class="eyebrow">Cara Bergabung</p>
@@ -443,7 +582,7 @@
         </div>
       </section>
 
-      <section id="faq" class="section-pad bg-white">
+      <section id="faq" class="section-pad bg-sky">
         <div class="section-wrap max-w-4xl">
           <div class="section-heading">
             <p class="eyebrow">Pertanyaan Umum</p>
@@ -464,25 +603,10 @@
                 lebih praktis karena perpindahan gigi berlangsung otomatis.
               </p>
             </details>
-            <details class="faq-item">
-              <summary>
-                Apa saja yang termasuk dalam paket promo?<span>+</span>
-              </summary>
-              <p>
-                Paket mencakup sesi kursus, pilihan mobil manual atau matic,
-                jadwal fleksibel, instruktur profesional, dan biaya pendaftaran.
-                Paket OK Deal juga termasuk pembuatan SIM A.
-              </p>
-            </details>
-            <details class="faq-item">
-              <summary>
-                Sampai kapan promo Oktober berlaku?<span>+</span>
-              </summary>
-              <p>
-                Promo berlaku sampai 31 Oktober 2026 atau selama kuota promo
-                masih tersedia.
-              </p>
-            </details>
+            <!-- PROMO:FAQ:START -->
+<details class="faq-item"><summary>Apa saja yang termasuk dalam paket promo?<span>+</span></summary><p>Crazy Deal: 8 jam; pilihan manual atau matic. Jadwal latihan fleksibel; Instruktur profesional dan sabar; Konsultasi kebutuhan belajar; Sudah termasuk biaya pendaftaran; Tidak termasuk pembuatan SIM A.<br>OK Deal: 10 jam; pilihan manual atau matic. Jadwal latihan fleksibel; Instruktur profesional dan sabar; Konsultasi kebutuhan belajar; Sudah termasuk biaya pendaftaran; Termasuk pembuatan SIM A.</p></details>
+<details class="faq-item"><summary>Kapan promo Oktober 2026 berlaku?<span>+</span></summary><p>Berlaku 1 Oktober 2026 – 31 Oktober 2026 · Kuota promo terbatas.</p></details>
+<!-- PROMO:FAQ:END -->
             <details class="faq-item">
               <summary>Bagaimana memilih jadwal latihan?<span>+</span></summary>
               <p>
@@ -494,7 +618,7 @@
         </div>
       </section>
 
-      <section id="lokasi" class="section-pad bg-sky">
+      <section id="lokasi" class="section-pad bg-white">
         <div class="section-wrap">
           <div class="section-heading">
             <p class="eyebrow">Lokasi Kami</p>

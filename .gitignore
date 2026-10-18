@@ -1,0 +1,4 @@
+dist/
+.promo-backups/
+node_modules/
+*.tmp-promo

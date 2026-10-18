@@ -1,0 +1,44 @@
+{
+  "active": true,
+  "startDate": "2026-10-01",
+  "endDate": "2026-10-31",
+  "quotaLimited": true,
+  "packages": [
+    {
+      "name": "Crazy Deal",
+      "price": 1150000,
+      "duration": 8,
+      "unit": "jam",
+      "transmissions": [
+        "manual",
+        "matic"
+      ],
+      "featured": false,
+      "registrationIncluded": true,
+      "simIncluded": false,
+      "features": [
+        "Jadwal latihan fleksibel",
+        "Instruktur profesional dan sabar",
+        "Konsultasi kebutuhan belajar"
+      ]
+    },
+    {
+      "name": "OK Deal",
+      "price": 2200000,
+      "duration": 10,
+      "unit": "jam",
+      "transmissions": [
+        "manual",
+        "matic"
+      ],
+      "featured": true,
+      "registrationIncluded": true,
+      "simIncluded": true,
+      "features": [
+        "Jadwal latihan fleksibel",
+        "Instruktur profesional dan sabar",
+        "Konsultasi kebutuhan belajar"
+      ]
+    }
+  ]
+}
