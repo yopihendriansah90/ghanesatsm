@@ -40,6 +40,19 @@ Input ditampilkan sebagai teks biasa; tidak dapat dipakai untuk memasukkan kode 
 
 ## Cloudflare Pages melalui GitHub
 
+### Jika proyek dibuat sebagai Workers (menggunakan `npx wrangler deploy`)
+
+Log yang memiliki **user deploy command: npx wrangler deploy** menunjukkan alur Workers Builds. Repository menyediakan `wrangler.jsonc` untuk alur ini, dengan nama Worker `ghanesatsm` dan direktori aset **`./dist`**.
+
+- Build command: `npm run build`
+- Deploy command: `npx wrangler deploy`
+- Root directory: akar repository, tempat `package.json` dan `wrangler.jsonc` berada.
+- Commit dan push `wrangler.jsonc` bersama perubahan proyek, lalu jalankan ulang deployment pada commit terbaru.
+
+Jangan gunakan `assets.directory: "."`. Itu akan mengikutsertakan repository dan dependensi npm; file workerd bisa melebihi batas 25 MiB per aset. Folder dist hanya berisi website publik. Dashboard tetap berjalan lokal di `/dashboard`, bukan di hosting. Tidak perlu memublikasikan dashboard atau menghapus dependensi Wrangler.
+
+### Jika memakai Pages Git integration
+
 Hubungkan repository GitHub ke proyek Cloudflare Pages dengan pengaturan berikut:
 
 | Pengaturan | Nilai |
@@ -50,6 +63,8 @@ Hubungkan repository GitHub ke proyek Cloudflare Pages dengan pengaturan berikut
 | Build command | `npm run build` |
 | Build output directory | `dist` |
 | Node version | 24, juga ditentukan melalui `.node-version` |
+
+Pages Git integration menggunakan build command dan output directory, tanpa langkah `npx wrangler deploy`. Konfigurasi `wrangler.jsonc` di repo ini ditujukan untuk Workers; jika memilih Pages, hapus konfigurasi Workers tersebut dari branch yang dipakai Pages dan gunakan pengaturan tabel di atas.
 
 Build membaca JSON dan menghasilkan ulang HTML agar deployment konsisten. Cloudflare hanya menerbitkan dist; server lokal tidak dijalankan di hosting. Tidak diperlukan secret, database, atau GitHub token pada dashboard.
 
