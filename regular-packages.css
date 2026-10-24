@@ -1,0 +1,79 @@
+#paket-reguler { --navy: #071955; --blue: #0068ff; --yellow: #ffd526; background: #fff; padding-block: 52px 32px; color: var(--navy); }
+#paket-reguler .section-wrap { max-width: 1200px; }
+#paket-reguler .section-heading h2 { font-size: clamp(26px, 3.1vw, 40px); letter-spacing: -.045em; }
+#paket-reguler .section-heading > p:last-child { font-size: clamp(14px, 1.4vw, 18px); color: #687db2; }
+#paket-reguler .eyebrow { color: #0062ff; letter-spacing: .3em; font-size: 13px; }
+#paket-reguler .package-icon { display: inline-flex; flex: none; width: 64px; height: 64px; align-items: center; justify-content: center; overflow: hidden; vertical-align: middle; }
+#paket-reguler .package-icon img { width: 100%; height: 100%; object-fit: contain; transform: scale(1.45); }
+#paket-reguler .regular-summary, #paket-reguler .regular-info { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0; border: 0; border-radius: 16px; padding: 14px 28px; background: #edf8ff; }
+#paket-reguler .regular-summary { margin-top: 20px; }
+#paket-reguler .package-info-item { display: flex; align-items: center; gap: 18px; min-width: 0; }
+#paket-reguler .package-info-item + .package-info-item { border-left: 1px solid #c1e1fa; padding-left: 40px; }
+#paket-reguler .package-info-item p { display: grid; gap: 3px; font-size: 15px; line-height: 1.5; color: #687db2; }
+#paket-reguler .package-info-item strong { font-size: 16px; color: var(--navy); font-weight: 800; }
+#paket-reguler .regular-grid { grid-template-columns: repeat(3,minmax(0,1fr)); margin-top: 14px; gap: 18px 12px; }
+#paket-reguler .regular-card { padding: 20px; border: 1px solid #bdddff; border-radius: 14px; box-shadow: 0 8px 22px #167bd508; }
+#paket-reguler .regular-card-priority { display: grid; grid-template-columns: 1.1fr 1fr; gap: 28px; padding: 24px 28px; border: 1.5px solid #0671ff; background: linear-gradient(120deg,#ecf8ff,#fafeff); }
+#paket-reguler .regular-class-label { font-size: 13px; margin: 0 0 14px 6px; padding: 7px 20px; background: #ffd526; }
+#paket-reguler .package-card-heading { display: flex; align-items: flex-start; gap: 16px; }
+#paket-reguler .package-class-icon { width: 76px; height: 76px; }
+#paket-reguler .package-card-heading > div { min-width: 0; flex: 1; }
+#paket-reguler h3 { font-size: clamp(17px,1.65vw,21px); letter-spacing: -.04em; }
+#paket-reguler .regular-card-priority h3 { font-size: 27px; }
+#paket-reguler .regular-price { font-size: clamp(25px,2.6vw,38px); margin: 4px 0; line-height: 1.2; color: #0068ff; }
+#paket-reguler .regular-card-priority .regular-price { font-size: clamp(36px,3.7vw,50px); }
+#paket-reguler .regular-meetings { display: flex; align-items: center; gap: 9px; margin: 8px 0 0; font-size: 16px; }
+#paket-reguler .regular-meetings .package-icon { width: 25px; height: 27px; }
+#paket-reguler .regular-meetings img { transform: scale(1.95); }
+#paket-reguler .package-fee { border-top: 1px solid #c1e1fa; margin: 18px 0 12px; padding-top: 10px; font-size: 13px; text-align: center; color: #687db2; }
+#paket-reguler .regular-card-priority .package-fee { border: 0; text-align: left; margin: 8px 0 0; padding: 0; font-size: 15px; }
+#paket-reguler .regular-priority-benefits { border-left: 1px solid #c1e1fa; padding-left: 40px; }
+#paket-reguler .regular-priority-benefits h4 { font-size: 19px; }
+#paket-reguler .regular-benefits { gap: 4px; margin-top: 10px; font-size: 15px; color: #687db2; }
+#paket-reguler .regular-benefits li { align-items: center; gap: 12px; }
+#paket-reguler .regular-benefits li:before { content: none; }
+#paket-reguler .regular-benefits .package-icon { width: 26px; height: 26px; }
+#paket-reguler .regular-benefits img { transform: scale(1.85); }
+#paket-reguler .regular-button { max-width: none; width: 100%; min-height: 44px; margin-top: auto; padding: 10px; border-radius: 10px; gap: 12px; background: linear-gradient(110deg,#ffd328,#ffdc27); font-size: 15px; }
+#paket-reguler .regular-card-priority .regular-button { margin-top: 14px; min-height: 50px; }
+#paket-reguler .regular-button .package-icon { width: 25px; height: 25px; margin: 0; }
+#paket-reguler .regular-button img { transform: scale(1.65); }
+#paket-reguler .regular-button .package-arrow { width: 20px; height: 20px; }
+#paket-reguler .package-arrow img { transform: scale(2); }
+#paket-reguler .regular-info { margin-top: 16px; }
+#paket-reguler .regular-info .package-icon { width: 58px; height: 58px; }
+#paket-reguler .regular-info .package-info-item p { font-size: 14px; }
+#paket-reguler .regular-info .package-info-item strong { font-size: 15px; }
+#paket-reguler .package-help { text-align: center; font-size: 12px; margin-top: 8px; color: #687db2; }
+@media(max-width: 1000px) {
+  #paket-reguler .package-class-icon { width: 55px; height: 55px; }
+  #paket-reguler .package-card-heading { gap: 10px; }
+  #paket-reguler .regular-card { padding: 18px 14px; }
+  #paket-reguler .regular-card-priority { padding: 24px; }
+  #paket-reguler .regular-priority-benefits { padding-left: 24px; }
+  #paket-reguler .package-info-item + .package-info-item { padding-left: 20px; }
+}
+@media(max-width: 767px) {
+  #paket-reguler { padding: 38px 20px 28px; }
+  #paket-reguler .regular-grid { grid-template-columns: 1fr; gap: 16px; }
+  #paket-reguler .regular-card-priority { grid-template-columns: 1fr; gap: 20px; }
+  #paket-reguler .regular-summary, #paket-reguler .regular-info { grid-template-columns: 1fr; padding: 16px; gap: 14px; }
+  #paket-reguler .package-info-item { gap: 12px; }
+  #paket-reguler .package-info-item + .package-info-item { border-left: 0; border-top: 1px solid #c1e1fa; padding: 14px 0 0; }
+  #paket-reguler .package-info-item .package-icon { width: 48px; height: 48px; }
+  #paket-reguler .package-info-item p { font-size: 13px; }
+  #paket-reguler .package-info-item strong { font-size: 14px; }
+  #paket-reguler .regular-priority-benefits { border-left: 0; border-top: 1px solid #c1e1fa; padding: 16px 0 0; }
+  #paket-reguler .regular-card { padding: 20px; }
+  #paket-reguler .package-class-icon { width: 64px; height: 64px; }
+  #paket-reguler .regular-price { font-size: clamp(26px,7.5vw,36px); }
+  #paket-reguler .regular-card-priority h3 { font-size: 23px; }
+  #paket-reguler .regular-card-priority .regular-price { font-size: clamp(29px,8vw,40px); }
+  #paket-reguler .regular-meetings { font-size: 14px; }
+  #paket-reguler .regular-card-priority .package-fee { font-size: 12px; }
+}
+@media(max-width: 359px) {
+  #paket-reguler { padding-inline: 14px; }
+  #paket-reguler .regular-card { padding: 16px; }
+  #paket-reguler .package-class-icon { width: 46px; height: 46px; }
+}

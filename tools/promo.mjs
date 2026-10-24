@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { promoCopy, dateLabel } from './promo-content.mjs';
 
 export const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-export const PUBLIC_FILES = ["oke-deal.css","oke-background.png","oke-icon-arrow.svg","oke-icon-calendar.svg","oke-icon-car.svg","oke-icon-check.svg","oke-icon-cross.svg","oke-icon-crown.svg","oke-icon-whatsapp.svg","oke-original.jpg", 'index.html', 'style.css', 'script.js', 'logoganesa.png', 'logoig.png', 'lowa.png', 'herbobackgroudn.png', 'manual.png', 'matick.png', 'alumni1.png', 'alumni2.png', 'alumni3.png', 'alumni4.png', 'alumni5.png'];
+export const PUBLIC_FILES = ["regular-packages.css","package-registration.png","package-people.png","package-steering.png","package-license.png","package-person.png","package-shield.png","package-calendar.png","package-gear.png","package-check.png","package-schedule.png","package-whatsapp.png","package-arrow.png","oke-deal.css","oke-background.png","oke-icon-arrow.svg","oke-icon-calendar.svg","oke-icon-car.svg","oke-icon-check.svg","oke-icon-cross.svg","oke-icon-crown.svg","oke-icon-whatsapp.svg","oke-original.jpg", 'index.html', 'style.css', 'script.js', 'logoganesa.png', 'logoig.png', 'lowa.png', 'herbobackgroudn.png', 'manual.png', 'matick.png', 'alumni1.png', 'alumni2.png', 'alumni3.png', 'alumni4.png', 'alumni5.png'];
 export const escapeHTML = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 export const rupiah = value => 'Rp' + new Intl.NumberFormat('id-ID').format(value);
 const phone = '6282116193939';
