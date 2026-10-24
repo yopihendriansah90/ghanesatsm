@@ -1,0 +1,107 @@
+.oke-section *{box-sizing:border-box}.oke-section{margin:0;background:#042655;font-family:Arial,Helvetica,sans-serif}.oke-section{--navy:#03245b;--yellow:#ffdd3b;position:relative;width:100%;max-width:1920px;margin:auto;color:var(--navy);container-type:inline-size}.oke-section .editable-view{min-height:66.64cqw;padding:2.75cqw 10.45cqw 1.6cqw;background:#032554 url('oke-background.png') center top/100% 100% no-repeat}.oke-section .oke-hero{color:#fff;height:24.25cqw}.oke-section .promo{height:2.9cqw;padding:0 1.5cqw;display:inline-flex;align-items:center;gap:1cqw;background:#0087ff;border-radius:3cqw;font-size:1.25cqw;font-weight:800;letter-spacing:.055em;box-shadow:0 .3cqw 1.4cqw #007aff40}.oke-section .promo img,.oke-section .date img{width:1.45cqw;height:1.45cqw}.oke-section h1{font-size:8.15cqw;line-height:.97;margin:.8cqw 0 0;font-weight:1000;letter-spacing:-.045em;text-shadow:0 .2cqw .4cqw #0003}.oke-section h2{font-size:3.28cqw;line-height:1.1;letter-spacing:-.045em;margin:0;font-weight:900}.oke-section h2 span{color:var(--yellow)}.oke-section .intro{font-size:1.52cqw;line-height:1.28;letter-spacing:.025em;color:#d4dfed;margin:.7cqw 0 1cqw}.oke-section .date{display:inline-flex;align-items:center;gap:1.25cqw;font-size:1.18cqw;border:1.5px solid #5583cb;border-radius:3cqw;margin:0;padding:.65cqw 1.6cqw}.oke-section .plans{display:grid;grid-template-columns:1fr 1.02fr;gap:1.25cqw}.oke-section .plan{position:relative;min-width:0;min-height:35.2cqw;background:#fff;border-radius:1.3cqw;filter:drop-shadow(0 .5cqw .8cqw #00122b55);--notch:1.15cqw;mask:radial-gradient(circle var(--notch) at 0 40%,transparent 97%,#000 100%) left,radial-gradient(circle var(--notch) at 100% 40%,transparent 97%,#000 100%) right;mask-size:51% 100%;mask-repeat:no-repeat}.oke-section .ticket-content{padding:1.35cqw 2.25cqw 1.75cqw}.oke-section .badge{display:inline-flex;align-items:center;justify-content:center;background:var(--navy);border-radius:2cqw;padding:.6cqw 1.25cqw;color:white;font-size:1.08cqw;font-weight:800;letter-spacing:.07em;line-height:1}.oke-section .plan-heading{display:flex;align-items:center;gap:1.5cqw;margin:1.2cqw 0 1.45cqw}.oke-section .car-icon{width:4.65cqw;height:4.65cqw;flex-shrink:0}.oke-section h3{font-size:1.95cqw;line-height:1.2;letter-spacing:-.035em;margin:0 0 .65cqw;font-weight:900}.oke-section .chips{display:flex;gap:1cqw}.oke-section .chips span{border:1.5px solid #b8d8eb;border-radius:2cqw;padding:.3cqw 1cqw;background:#f6fbff;color:#167bd5;font-size:1.05cqw;font-weight:600}.oke-section .separator{border-top:1px dashed #dce3eb}.oke-section .price{font-size:3.58cqw;font-weight:900;letter-spacing:-.035em;margin:1.1cqw 0 1cqw;line-height:1.15}.oke-section ul{list-style:none;padding:0;margin:0 0 1.5cqw;display:grid;gap:.72cqw}.oke-section li{font-size:1.25cqw;line-height:1.2;color:#334e73;display:flex;align-items:center;gap:1.25cqw}.oke-section li:before{content:'';background:url('oke-icon-check.svg') center/contain no-repeat;flex:none;width:1.65cqw;height:1.65cqw}.oke-section li.excluded{color:#93666b}.oke-section li.excluded:before{background-image:url('oke-icon-cross.svg')}.oke-section .cta{width:100%;min-height:4.9cqw;padding:1cqw 2cqw;background:#fff;color:var(--navy);border:1.5px solid var(--navy);border-radius:1.2cqw;display:flex;gap:1.25cqw;align-items:center;font:800 1.38cqw Arial,sans-serif;cursor:pointer}.oke-section .cta img{width:2.2cqw;height:2.2cqw}.oke-section .cta .arrow{margin-left:auto;width:1.8cqw}.oke-section .cta:hover{filter:brightness(.96)}.oke-section button:focus-visible{outline:3px solid #0088ff;outline-offset:4px}.oke-section .recommended{border:3px solid #ffdc30;overflow:visible;mask:none}.oke-section .recommended:before,.oke-section .recommended:after{content:'';position:absolute;top:37%;width:2.3cqw;height:2.3cqw;background:#042655;border:3px solid #ffdc30;border-radius:50%}.oke-section .recommended:before{left:-1.35cqw;clip-path:inset(0 0 0 45%)}.oke-section .recommended:after{right:-1.35cqw;clip-path:inset(0 45% 0 0)}.oke-section .recommended .ticket-content{padding-top:2.3cqw}.oke-section .recommended .badge{color:var(--navy);background:var(--yellow)}.oke-section .recommended .plan-heading{margin-top:1cqw;margin-bottom:1cqw}.oke-section .recommended .cta{background:var(--yellow);border-color:var(--yellow)}.oke-section .recommend-label{position:absolute;top:-1.4cqw;left:1cqw;display:flex;align-items:center;gap:.7cqw;border-radius:1.5cqw;background:var(--yellow);padding:.7cqw 1.5cqw;font-size:1.15cqw;font-weight:800;letter-spacing:.04em;white-space:nowrap}.oke-section .recommend-label img{width:1.7cqw;height:1.7cqw}.oke-section .footnote{text-align:center;color:#b7cce5;font-size:1.02cqw;margin:1.45cqw 0 0}.oke-section .exact-view{position:relative}.oke-section .original{width:100%;height:auto;display:block}.oke-section .hotspot{position:absolute;top:83.1%;height:7.5%;background:transparent;border:0;border-radius:15px;cursor:pointer}.oke-section .crazy-hotspot{left:12.7%;width:34.3%}.oke-section .oke-hotspot{left:52.7%;width:34.6%}.oke-section .hotspot:hover{background:#ffffff16}.oke-section .contact-dialog{max-width:430px;width:calc(100% - 40px);border:0;border-radius:18px;padding:28px;color:#03245b;box-shadow:0 20px 80px #00152b66}.oke-section .contact-dialog::backdrop{background:#00152baa}.oke-section .contact-dialog h2{font-size:23px;letter-spacing:0;margin:12px 0}.oke-section .contact-dialog p{line-height:1.6}.oke-section .close{float:right;border:0;background:none;font-size:28px;cursor:pointer}.oke-section .dismiss{background:#ffdd3b;border:0;border-radius:9px;padding:12px 24px;font-weight:700;cursor:pointer}.oke-section [hidden]{display:none!important}
+@media(max-width:640px){.oke-section .editable-view{padding:24px 20px;background-size:auto 490px;background-position:65% 0;background-repeat:no-repeat;background-color:#032554}.oke-section .oke-hero{height:400px;padding-top:0}.oke-section .promo{height:30px;padding:0 13px;font-size:11px;gap:9px}.oke-section .promo img,.oke-section .date img{width:15px;height:15px}.oke-section h1{font-size:62px;margin:14px 0 2px}.oke-section h2{font-size:25px;max-width:340px}.oke-section .intro{font-size:14px;max-width:285px;margin:12px 0}.oke-section .desktop-break{display:none}.oke-section .date{font-size:12px;padding:8px 12px;gap:10px}.oke-section .plans{grid-template-columns:1fr;gap:30px}.oke-section .plan{min-height:0;border-radius:17px;--notch:13px}.oke-section .ticket-content{padding:20px 22px}.oke-section .badge{font-size:12px;padding:8px 15px;border-radius:20px}.oke-section .plan-heading{gap:16px;margin:18px 0}.oke-section .car-icon{width:50px;height:50px}.oke-section h3{font-size:22px;margin:0 0 8px}.oke-section .chips{gap:10px}.oke-section .chips span{font-size:12px;padding:4px 12px;border-radius:20px}.oke-section .price{font-size:39px;margin:17px 0}.oke-section ul{gap:12px;margin:0 0 22px}.oke-section li{font-size:14px;gap:12px}.oke-section li:before{width:20px;height:20px}.oke-section .cta{min-height:56px;font-size:15px;padding:14px 20px;gap:14px;border-radius:13px}.oke-section .cta img{width:25px;height:25px}.oke-section .cta .arrow{width:23px}.oke-section .recommended .ticket-content{padding-top:30px}.oke-section .recommended .plan-heading{margin:18px 0}.oke-section .recommend-label{top:-17px;left:13px;padding:9px 15px;border-radius:20px;font-size:12px;gap:8px}.oke-section .recommend-label img{width:19px;height:19px}.oke-section .recommended:before,.oke-section .recommended:after{width:26px;height:26px}.oke-section .recommended:before{left:-15px}.oke-section .recommended:after{right:-15px}.oke-section .footnote{font-size:11px;line-height:1.6;margin:20px 10px 0}}
+
+.oke-section{font-family:Arial,Helvetica,sans-serif;line-height:normal;text-align:left}.oke-section .oke-hero{background:none;overflow:visible}.oke-section img{display:inline-block;max-width:none;vertical-align:baseline}.oke-section h1,.oke-section h2,.oke-section h3{font-family:Arial,Helvetica,sans-serif;color:inherit}.oke-section .cta{text-decoration:none}.oke-section .price{padding:0;color:var(--navy)}.oke-section .intro{padding:0}.oke-section .original{display:block;max-width:100%}
+
+/* Reuse the website's one-time scroll reveal for the promo. */
+.oke-section .oke-hero > .reveal:nth-child(2) { transition-delay: 60ms; }
+.oke-section .oke-hero > .reveal:nth-child(3) { transition-delay: 120ms; }
+.oke-section .oke-hero > .reveal:nth-child(4) { transition-delay: 180ms; }
+.oke-section .oke-hero > .reveal:nth-child(5) { transition-delay: 240ms; }
+.oke-section .cta {
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+.oke-section .cta .arrow { transition: transform 180ms ease; }
+.oke-section .cta:active { transform: scale(.98); }
+.oke-section .cta:focus-visible .arrow { transform: translateX(3px); }
+.oke-section .plan {
+  transition: opacity .65s var(--ease), transform .65s var(--ease),
+    translate 240ms var(--ease), filter 240ms ease;
+}
+/* Individual translate keeps hover movement separate from scroll reveal. */
+.oke-section .plan.reveal.is-visible { transition-delay: 0ms; }
+.oke-section .plan:focus-within {
+  filter: drop-shadow(0 12px 18px #00122b66);
+}
+@media (hover: hover) and (pointer: fine) {
+  .oke-section .plan:hover {
+    translate: 0 -7px;
+    filter: drop-shadow(0 14px 20px #00122b80);
+  }
+  .oke-section .cta:hover { transform: translateY(-2px); box-shadow: 0 6px 16px #03245b20; }
+  .oke-section .cta:hover .arrow { transform: translateX(3px); }
+}
+@media (min-width: 641px) {
+  .oke-section .plan.reveal:nth-child(2) { transition-delay: 120ms; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .oke-section .plan { translate: none !important; transition: none !important; }
+  .oke-section .reveal,
+  .oke-section .cta,
+  .oke-section .cta .arrow { transition: none !important; transition-delay: 0ms !important; }
+  .oke-section .cta:hover,
+  .oke-section .cta:active,
+  .oke-section .cta .arrow { transform: none !important; }
+}
+
+/* Smaller type and controls keep the promo in scale with the main website. */
+.oke-section h1 { font-size: clamp(48px, 6.3cqw, 100px); }
+.oke-section h2 { font-size: clamp(22px, 2.55cqw, 40px); }
+.oke-section .intro { font-size: clamp(13px, 1.2cqw, 18px); }
+.oke-section .promo { height: 2.6cqw; font-size: clamp(10px, 1cqw, 15px); }
+.oke-section .date { font-size: clamp(10px, 1cqw, 14px); }
+.oke-section h3 { font-size: clamp(17px, 1.55cqw, 24px); }
+.oke-section .price { font-size: clamp(28px, 2.8cqw, 42px); }
+.oke-section li { font-size: clamp(12px, 1.1cqw, 16px); }
+.oke-section .badge { font-size: clamp(10px, .9cqw, 13px); }
+.oke-section .recommend-label { font-size: clamp(10px, .95cqw, 14px); }
+.oke-section .car-icon { width: 3.8cqw; height: 3.8cqw; }
+.oke-section .cta {
+  min-height: 44px;
+  padding: .75cqw 1.4cqw;
+  border-radius: .9cqw;
+  gap: .9cqw;
+  font-size: clamp(12px, 1.1cqw, 16px);
+}
+.oke-section .cta img { width: 1.75cqw; height: 1.75cqw; }
+.oke-section .cta .arrow { width: 1.5cqw; }
+.oke-section .plan { min-height: 30cqw; }
+.oke-section .editable-view { min-height: 61.5cqw; }
+.oke-section .plan-heading > div { min-width: 0; }
+.oke-section .cta:focus-visible { outline: 3px solid #0088ff; outline-offset: 4px; }
+
+@media (max-width: 640px) {
+  .oke-section .editable-view {
+    min-height: 0;
+    padding: 32px 20px 28px;
+    background:
+      radial-gradient(ellipse 100% 360px at 100% 0%, #1455a34d, transparent 75%),
+      linear-gradient(165deg, #082e65 0%, #042655 45%, #03214b 100%);
+  }
+  .oke-section .oke-hero { height: auto; padding-bottom: 32px; }
+  .oke-section h1 { text-shadow: none; }
+  .oke-section .intro { line-height: 1.55; }
+  .oke-section .date { background: #ffffff08; border-color: #ffffff38; }
+  .oke-section .recommended:before,
+  .oke-section .recommended:after { background: #042655; }
+  .oke-section h1 { font-size: clamp(40px, 12cqw, 52px); }
+  .oke-section h2 { font-size: 22px; max-width: 290px; }
+  .oke-section .intro { font-size: 13px; }
+  .oke-section .promo { height: 28px; font-size: 10px; }
+  .oke-section .date { font-size: 11px; padding: 7px 11px; }
+  .oke-section .ticket-content { padding: 18px; }
+  .oke-section .recommended .ticket-content { padding-top: 28px; }
+  .oke-section h3 { font-size: 18px; }
+  .oke-section .price { font-size: 32px; margin: 14px 0; }
+  .oke-section .badge { font-size: 10px; padding: 7px 12px; }
+  .oke-section .recommend-label { font-size: 10px; padding: 8px 12px; }
+  .oke-section .recommend-label img { width: 16px; height: 16px; }
+  .oke-section .plan-heading { gap: 12px; margin: 15px 0; }
+  .oke-section .car-icon { width: 42px; height: 42px; }
+  .oke-section li { font-size: 13px; gap: 10px; }
+  .oke-section li:before { width: 18px; height: 18px; }
+  .oke-section ul { gap: 10px; margin-bottom: 18px; }
+  .oke-section .cta { min-height: 46px; padding: 10px 14px; font-size: 13px; gap: 10px; border-radius: 10px; }
+  .oke-section .cta img { width: 21px; height: 21px; }
+  .oke-section .cta .arrow { width: 19px; }
+}

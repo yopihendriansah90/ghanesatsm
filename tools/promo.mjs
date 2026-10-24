@@ -1,10 +1,11 @@
+import { referenceCard, referenceSection } from './oke-section.mjs';
 import { readFile, writeFile, mkdir, rename, copyFile, unlink } from 'node:fs/promises';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { promoCopy, dateLabel } from './promo-content.mjs';
 
 export const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-export const PUBLIC_FILES = ['index.html', 'style.css', 'script.js', 'logoganesa.png', 'logoig.png', 'lowa.png', 'herbobackgroudn.png', 'manual.png', 'matick.png', 'alumni1.png', 'alumni2.png', 'alumni3.png', 'alumni4.png', 'alumni5.png'];
+export const PUBLIC_FILES = ["oke-deal.css","oke-background.png","oke-icon-arrow.svg","oke-icon-calendar.svg","oke-icon-car.svg","oke-icon-check.svg","oke-icon-cross.svg","oke-icon-crown.svg","oke-icon-whatsapp.svg","oke-original.jpg", 'index.html', 'style.css', 'script.js', 'logoganesa.png', 'logoig.png', 'lowa.png', 'herbobackgroudn.png', 'manual.png', 'matick.png', 'alumni1.png', 'alumni2.png', 'alumni3.png', 'alumni4.png', 'alumni5.png'];
 export const escapeHTML = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 export const rupiah = value => 'Rp' + new Intl.NumberFormat('id-ID').format(value);
 const phone = '6282116193939';
@@ -48,15 +49,7 @@ function features(p) {
 }
 function card(p, data) {
   const message = `Halo Ghanesa, saya tertarik promo ${p.name} periode ${data.period}: ${p.duration} ${p.unit}, pilihan ${p.transmissions.join(' atau ')}, ${rupiah(p.price)}. ${p.registrationIncluded ? 'Termasuk' : 'Tidak termasuk'} biaya pendaftaran. ${p.simIncluded ? 'Termasuk' : 'Tidak termasuk'} pembuatan SIM A. Berlaku ${dateText(data.startDate)} – ${dateText(data.endDate)}.`;
-  return `<article data-managed-promo class="program-card promo-card${p.featured ? ' featured' : ''}">
-    ${p.label ? `<span class="promo-label">${escapeHTML(p.label)}</span>` : ''}
-    <div class="program-copy"><span class="program-icon" aria-hidden="true"></span><div><h3>${escapeHTML(p.title)}</h3><p>${escapeHTML(p.description)}</p></div></div>
-    <div class="transmission-badges">${p.transmissions.map(t => `<span>${t === 'manual' ? 'Manual' : 'Matic'}</span>`).join('')}</div>
-    <div class="price">${rupiah(p.price)}</div><p class="promo-duration">${p.duration} ${p.unit}</p>
-    <ul class="check-list">${features(p).map(([label, included]) => `<li data-icon="${included ? 'check_circle' : 'close'}">${escapeHTML(label)}</li>`).join('')}</ul>
-    <a href="${escapeHTML(wa(message))}" class="program-button">${escapeHTML(p.buttonText)} <span aria-hidden="true">→</span></a>
-    <small class="program-note">${escapeHTML(p.note)}</small>
-  </article>`;
+  return referenceCard(p, data, wa(message));
 }
 export function renderBlocks(input) {
   const d = promoCopy(validate(input));
@@ -64,7 +57,7 @@ export function renderBlocks(input) {
   const deadline = `Berlaku ${period}${d.quotaNote ? ' · ' + d.quotaNote : ''}.`;
   const heroMessage = d.active ? `Halo Ghanesa, saya ingin konsultasi promo ${d.period}.` : 'Halo Ghanesa, saya ingin konsultasi kursus mengemudi dan pilihan paket yang tersedia.';
   const hero = `<a href="${escapeHTML(wa(heroMessage))}" class="inline-flex items-center justify-center gap-2 rounded-full bg-yellow px-6 py-3.5 text-sm font-extrabold text-navy shadow-lg shadow-yellow/30 transition hover:-translate-y-0.5">${d.active ? 'Konsultasi Promo via WhatsApp' : 'Konsultasi Kursus via WhatsApp'} <span aria-hidden="true">→</span></a>`;
-  const section = `<section id="program" class="section-pad bg-white"><div class="section-wrap">
+  const section = d.active ? referenceSection(d, d.packages.map(p => card(p, d)).join('\n')) : `<section id="program" class="section-pad bg-white"><div class="section-wrap">
     <div class="section-heading"><p class="eyebrow">${d.active ? 'Promo Spesial ' + escapeHTML(d.period) : 'Informasi Promo'}</p><h2>${d.active ? escapeHTML(d.title) : 'Konsultasikan Pilihan Kursusmu'}</h2><p>${d.active ? escapeHTML(d.intro) : 'Saat ini belum ada promo aktif. Hubungi admin untuk pilihan paket dan informasi terbaru.'}</p>${d.active ? `<p class="promo-deadline">${escapeHTML(deadline)}</p>` : ''}</div>
     ${d.active ? `<div class="mt-9 grid gap-5 lg:grid-cols-2">${d.packages.map(p => card(p, d)).join('\n')}</div><p class="promo-note">${escapeHTML(deadline)}</p>` : `<div class="promo-inactive"><a class="regular-button" href="${wa(heroMessage)}">Konsultasi via WhatsApp</a><a href="#paket-reguler">Lihat Paket Reguler →</a></div>`}
   </div></section>`;

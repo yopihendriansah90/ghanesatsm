@@ -48,7 +48,7 @@ export async function startServer({ root = ROOT, port = 4317 } = {}) {
         const name = path === '/' ? 'index.html' : decodeURIComponent(path.slice(1));
         if (!PUBLIC_FILES.includes(name)) return send(404, { error: 'Halaman tidak ditemukan.' });
         const ext = name.split('.').at(-1);
-        match = [name, { html: 'text/html; charset=utf-8', css: 'text/css; charset=utf-8', js: 'text/javascript; charset=utf-8', png: 'image/png' }[ext]];
+        match = [name, { html: 'text/html; charset=utf-8', css: 'text/css; charset=utf-8', js: 'text/javascript; charset=utf-8', png: 'image/png', jpg: 'image/jpeg', svg: 'image/svg+xml' }[ext]];
       }
       if (!match) return send(404, { error: 'Halaman tidak ditemukan.' });
       const bytes = await readFile(resolve(root, match[0]));
