@@ -1,5 +1,95 @@
 document.documentElement.classList.add('js-enabled');
 
+const registrationLinks = document.querySelectorAll('.regular-card .regular-button, [data-managed-promo] a[href*="wa.me"]');
+if (registrationLinks.length) {
+  const dialog = document.createElement('dialog');
+  dialog.className = 'registration-modal';
+  dialog.id = 'registration-modal';
+  dialog.setAttribute('aria-labelledby', 'registration-title');
+  dialog.setAttribute('aria-describedby', 'registration-description');
+  dialog.innerHTML = `
+    <button type="button" class="registration-close" aria-label="Tutup form registrasi"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+    <p class="registration-eyebrow">MULAI BELAJAR MENGEMUDI</p>
+    <h2 id="registration-title">Registrasi peserta</h2>
+    <p id="registration-description">Lengkapi data peserta. Admin akan membantu konfirmasi pendaftaran dan jadwal melalui WhatsApp.</p>
+    <form class="registration-form">
+      <div class="registration-package">
+        <label for="participant-package">Paket pilihanmu</label>
+        <textarea id="participant-package" name="package" rows="2" readonly></textarea>
+        <span>Terisi otomatis sesuai paket yang kamu pilih.</span>
+      </div>
+      <div class="registration-fields">
+      <div class="registration-field">
+      <label for="participant-name">Nama lengkap <span aria-hidden="true">*</span></label>
+      <input id="participant-name" name="name" autocomplete="name" maxlength="100" placeholder="Nama lengkap peserta" required>
+      </div>
+      <div class="registration-field">
+      <label for="participant-gender">Jenis kelamin <span aria-hidden="true">*</span></label>
+      <select id="participant-gender" name="gender" required>
+        <option value="">Pilih jenis kelamin</option>
+        <option>Laki-laki</option><option>Perempuan</option>
+      </select>
+      </div>
+      <div class="registration-field registration-field-wide">
+      <label for="participant-address">Alamat lengkap <span aria-hidden="true">*</span></label>
+      <textarea id="participant-address" name="address" autocomplete="street-address" rows="3" maxlength="500" placeholder="Alamat lengkap peserta" required></textarea>
+      </div>
+      </div>
+      <div class="registration-actions">
+      <p class="registration-note">Data akan terisi di WhatsApp. Cukup tekan Kirim untuk menghubungi admin.</p>
+      <button class="registration-submit" type="submit">Kirim ke WhatsApp</button>
+      </div>
+    </form>`;
+  document.body.append(dialog);
+  const form = dialog.querySelector('form');
+  const packageInput = form.elements.namedItem('package');
+  let selectedLink;
+  registrationLinks.forEach((link) => {
+    const card = link.closest('.regular-card, [data-managed-promo]');
+    const promo = card.matches('[data-managed-promo]');
+    const name = (promo ? card.querySelector('.badge') : card.querySelector('h3'))?.textContent.trim() || card.querySelector('h3')?.textContent.trim();
+    const packageName = `${promo ? 'Promo' : 'Reguler'} — ${name}`;
+    const label = [...link.children].find((child) => child.tagName === 'SPAN' && !child.classList.contains('package-icon'));
+    if (label) label.textContent = 'Daftar Sekarang';
+    link.setAttribute('aria-haspopup', 'dialog');
+    link.setAttribute('aria-controls', dialog.id);
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      selectedLink = link;
+      packageInput.value = packageName;
+      dialog.showModal();
+      form.elements.namedItem('name').focus();
+    });
+  });
+  dialog.querySelector('.registration-close').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', (event) => {
+    const rect = dialog.getBoundingClientRect();
+    if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) dialog.close();
+  });
+  dialog.addEventListener('close', () => selectedLink?.focus());
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    for (const field of [form.elements.namedItem('name'), form.elements.namedItem('address')]) {
+      field.value = field.value.trim();
+    }
+    if (!form.reportValidity() || !selectedLink) return;
+    const destination = new URL(selectedLink.href);
+    const details = destination.searchParams.get('text');
+    const message = [
+      'Halo Ghanesa, saya ingin mendaftar kursus mengemudi.', '',
+      '*DATA PESERTA*',
+      `Nama: ${form.elements.namedItem('name').value}`,
+      `Jenis kelamin: ${form.elements.namedItem('gender').value}`,
+      `Alamat: ${form.elements.namedItem('address').value}`, '',
+      '*PAKET YANG DIPILIH*', packageInput.value,
+      details ? `Detail paket: ${details.replace(/^Halo Ghanesa,\s*/i, '')}` : '', '',
+      'Mohon informasi jadwal dan langkah pendaftaran selanjutnya. Terima kasih.'
+    ].join('\n');
+    destination.searchParams.set('text', message);
+    window.location.assign(destination.href);
+  });
+}
+
 const menuToggle = document.querySelector('#menu-toggle');
 const mobileNav = document.querySelector('#mobile-nav');
 const siteHeader = document.querySelector('#site-header');
@@ -54,19 +144,6 @@ document.querySelectorAll('.check-list li').forEach((item) => {
   item.textContent = item.textContent.replace(/^✓\s*/, '');
   item.prepend(materialIcon(iconName));
   item.classList.add('flex', 'items-center', 'gap-2');
-});
-document.querySelectorAll('.program-button > span').forEach((arrow) => {
-  arrow.className = 'material-symbols-outlined';
-  arrow.textContent = 'arrow_forward';
-});
-document.querySelectorAll('.cta-section a').forEach((link) => {
-  link.childNodes.forEach((node) => {
-    if (node.nodeType === Node.TEXT_NODE) node.textContent = node.textContent.replace('→', '');
-  });
-  link.append(materialIcon('arrow_forward'));
-});
-document.querySelectorAll('.whatsapp-float b').forEach((arrow) => {
-  arrow.replaceWith(materialIcon('arrow_forward'));
 });
 document.querySelectorAll('.steps > i').forEach((arrow) => {
   arrow.textContent = '';

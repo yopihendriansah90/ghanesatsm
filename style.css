@@ -6,6 +6,55 @@
   --ease: cubic-bezier(.22, .8, .25, 1);
 }
 
+.registration-modal { width: min(580px, calc(100% - 32px)); max-height: calc(100dvh - 32px); margin: auto; padding: 36px; overflow-y: auto; border: 1px solid #e1eaf4; border-radius: 24px; background: white; color: var(--navy); font-family: inherit; line-height: 1.5; box-shadow: 0 24px 80px #082d6b40; }
+.registration-modal::backdrop { background: #061c42b3; backdrop-filter: blur(5px); }
+.registration-modal[open] { animation: registration-open 320ms var(--ease) both; }
+.registration-modal[open]::backdrop { animation: registration-backdrop 280ms ease-out both; }
+@keyframes registration-open {
+  from { opacity: 0; transform: translateY(24px) scale(.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes registration-backdrop {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .registration-modal[open], .registration-modal[open]::backdrop { animation: none; }
+}
+body:has(.registration-modal[open]) { overflow: hidden; }
+.registration-close { position: absolute; top: 16px; right: 16px; display: grid; place-items: center; width: 36px; height: 36px; margin: 0; padding: 0; border: 0; border-radius: 50%; background: var(--sky); color: var(--navy); line-height: 1; cursor: pointer; }
+.registration-close svg { display: block; flex-shrink: 0; }
+.registration-close:hover { background: #dfedfc; }
+.registration-eyebrow { margin: 0 32px 10px 0; color: var(--blue); font-size: 10px; font-weight: 800; letter-spacing: .1em; }
+.registration-modal h2 { margin: 0 0 10px; font-size: 28px; font-weight: 800; }
+#registration-description { margin: 0 0 24px; color: #526681; font-size: 14px; line-height: 1.6; }
+.registration-form { display: grid; gap: 24px; }
+.registration-fields { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 20px 16px; }
+.registration-field { display: grid; align-content: start; gap: 8px; min-width: 0; }
+.registration-field-wide { grid-column: 1 / -1; }
+.registration-form label { display: block; margin: 0; font-size: 13px; font-weight: 700; }
+.registration-field label span { color: #c74242; }
+.registration-form input, .registration-form select, .registration-form textarea { display: block; width: 100%; min-width: 0; margin: 0; padding: 12px 14px; border: 1px solid #cad7e6; border-radius: 10px; background: white; color: var(--navy); font: inherit; font-size: 16px; line-height: 1.5; }
+.registration-form input, .registration-form select { height: 50px; }
+.registration-form ::placeholder { color: #8795a7; opacity: 1; }
+.registration-package { padding: 16px 18px; border: 1px solid #d8e9fa; border-radius: 14px; background: var(--sky); }
+.registration-package label { color: #526681; font-size: 12px; }
+.registration-package textarea[readonly] { height: 48px; margin: 5px 0; padding: 0; border: 0; border-radius: 0; background: transparent; font-size: 15px; font-weight: 800; resize: none; }
+.registration-package > span { display: block; color: #627792; font-size: 11px; }
+.registration-actions { display: grid; gap: 14px; padding-top: 18px; border-top: 1px solid #e8eef5; }
+.registration-form textarea { resize: vertical; }
+.registration-form input[readonly] { background: var(--sky); font-weight: 700; }
+.registration-form :focus-visible, .registration-close:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.registration-note { margin: 0; color: #526681; font-size: 12px; line-height: 1.6; }
+.registration-submit { display: flex; justify-content: center; gap: 12px; width: 100%; padding: 15px; border: 0; border-radius: 12px; background: var(--yellow); color: var(--navy); font: inherit; font-weight: 800; cursor: pointer; }
+.registration-submit:hover { background: #f3c600; }
+@media (max-width: 480px) {
+  .registration-modal { padding: 32px 20px 24px; border-radius: 20px; }
+  .registration-modal h2 { font-size: 25px; }
+  .registration-fields { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .registration-form { gap: 20px; }
+}
+
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; background: #fff; }
 main section[id] { scroll-margin-top: 90px; }

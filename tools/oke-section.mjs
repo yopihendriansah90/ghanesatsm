@@ -15,7 +15,7 @@ ${p.featured ? `<div class="recommend-label">${icon('crown')}REKOMENDASI KAMI</d
 <div class="plan-heading">${icon('car', 'car-icon')}<div><h3>${escape(title)}</h3><div class="chips">${p.transmissions.map(t => `<span>${t === 'manual' ? 'Manual' : 'Matic'}</span>`).join('')}</div></div></div>
 <div class="separator"></div><p class="price">Rp${new Intl.NumberFormat('id-ID').format(p.price)}</p>
 <ul>${benefits.map(b => `<li${b === sim && !p.simIncluded ? ' class="excluded" data-icon="close"' : ''}>${escape(b)}</li>`).join('')}</ul>
-<a class="cta" href="${escape(href)}">${icon('whatsapp', 'whatsapp-icon')}<span>Tanya ${escape(name)}</span>${icon('arrow', 'arrow')}</a>
+<a class="cta" href="${escape(href)}">${icon('whatsapp', 'whatsapp-icon')}<span>Tanya ${escape(name)}</span></a>
 </div></article>`;
 }
 export function referenceSection(d, cards) {
