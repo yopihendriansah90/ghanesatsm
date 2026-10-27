@@ -98,16 +98,40 @@ const syncHeaderState = () => siteHeader?.classList.toggle('is-scrolled', window
 syncHeaderState();
 window.addEventListener('scroll', syncHeaderState, { passive: true });
 
-menuToggle?.addEventListener('click', () => {
-  const open = mobileNav.classList.toggle('hidden') === false;
+let mobileMenuAnimation;
+const setMobileMenu = (open) => {
+  if (!mobileNav || !menuToggle) return;
+  const height = mobileNav.getBoundingClientRect().height;
+  mobileMenuAnimation?.cancel();
   menuToggle.setAttribute('aria-expanded', String(open));
   menuToggle.setAttribute('aria-label', open ? 'Tutup menu' : 'Buka menu');
+  mobileNav.inert = !open;
+  mobileNav.classList.remove('hidden');
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    mobileNav.classList.toggle('hidden', !open);
+    return;
+  }
+  mobileMenuAnimation = mobileNav.animate([
+    { height: `${height}px`, opacity: height ? 1 : 0 },
+    { height: `${open ? mobileNav.getBoundingClientRect().height : 0}px`, opacity: open ? 1 : 0 }
+  ], { duration: 280, easing: 'cubic-bezier(.22,.8,.25,1)' });
+  mobileMenuAnimation.onfinish = () => {
+    mobileNav.classList.toggle('hidden', !open);
+    mobileMenuAnimation = undefined;
+  };
+};
+if (mobileNav) mobileNav.inert = true;
+menuToggle?.addEventListener('click', () => setMobileMenu(menuToggle.getAttribute('aria-expanded') !== 'true'));
+document.querySelectorAll('#mobile-nav a').forEach((link) => link.addEventListener('click', () => setMobileMenu(false)));
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && menuToggle?.getAttribute('aria-expanded') === 'true') {
+    setMobileMenu(false);
+    menuToggle.focus();
+  }
 });
-
-document.querySelectorAll('#mobile-nav a').forEach((link) => link.addEventListener('click', () => {
-  mobileNav.classList.add('hidden');
-  menuToggle?.setAttribute('aria-expanded', 'false');
-}));
+window.matchMedia('(min-width: 1024px)').addEventListener('change', (event) => {
+  if (event.matches) setMobileMenu(false);
+});
 
 document.querySelectorAll("a[href*='wa.me']").forEach((link) => {
   if (link.classList.contains('whatsapp-float') || link.querySelector('.whatsapp-icon')) return;

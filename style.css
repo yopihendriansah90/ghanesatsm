@@ -163,6 +163,15 @@ body { margin: 0; background: #fff; }
 .nav-link { display: inline-flex; min-height: 42px; align-items: center; border-radius: 999px; padding: 0 12px; color: #475569; font-size: .8rem; transition: color .2s ease, background-color .2s ease, transform .2s var(--ease); }
 .nav-link:hover, .nav-link.active { background: #e9f7ff; color: var(--blue); }
 .nav-link:hover { transform: translateY(-1px); }
+#menu-toggle { display: grid; place-items: center; min-width: 44px; min-height: 44px; }
+.menu-bars { display: grid; gap: 5px; width: 22px; }
+.menu-bars > span { display: block; height: 2px; width: 22px; border-radius: 2px; background: currentColor; transition: transform 240ms var(--ease), opacity 180ms ease; }
+#menu-toggle[aria-expanded="true"] .menu-bars > span:first-child { transform: translateY(7px) rotate(45deg); }
+#menu-toggle[aria-expanded="true"] .menu-bars > span:nth-child(2) { opacity: 0; }
+#menu-toggle[aria-expanded="true"] .menu-bars > span:last-child { transform: translateY(-7px) rotate(-45deg); }
+#mobile-nav { overflow: hidden; }
+@media (min-width: 1024px) { #menu-toggle { display: none; } }
+@media (prefers-reduced-motion: reduce) { .menu-bars > span { transition: none; } }
 #site-header > div > a[href*='wa.me'] { min-height: 44px; align-items: center; gap: 7px; white-space: nowrap; }
 #site-header > div > a[href*='wa.me'] .whatsapp-icon { width: 18px; height: 18px; }
 
